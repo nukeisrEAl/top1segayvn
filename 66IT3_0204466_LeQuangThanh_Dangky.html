@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="thi kuoi ky.css">
+    <script src="thi kuoi ky.js"></script>
+</head>
+<body>
+<form name="f" action="">
+    <p><b><font class="dausao">*</font>Indicates required infomation.</b>
+    <h3>Where would you like your order delivered?</h3>
+    <input type="radio" name="wheredelivered" value="myaddress">Delivered to my address
+    <br>
+    <input type="radio" name="wheredelivered" value="storenearme">Delivered to store near me (<a href="">Learn more</a>)
+    <br>
+
+    <table>
+        <tr>
+            <td width="400"><p>Participating stores cannot accept deliveries of select oversize furnitur items.</p></td>
+            <td width="400"></td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <h3>Billing Address</h3>
+                <p>Billing address must match credit card.</p>
+                <table width="100%">
+                    <tr>
+                        <td>First Name:<font class="dausao">*</font></td>
+                        <td><input type="text" name="FirstNameBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:<font class="dausao">*</font></td>
+                        <td><input type="text" name="LastNameBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Company Name:</td>
+                        <td><input type="text" name="CompanyNameBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Address Line 1:<font class="dausao">*</font></td>
+                        <td><input type="text" name="AddressLine1Bill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Address Line 2:</td>
+                        <td><input type="text" name="AddressLine2Bill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>City:<font class="dausao">*</font></td>
+                        <td><input type="text" name="CityBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>State:<font class="dausao">*</font></td>
+                        <td><input type="text" name="StateBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code:<font class="dausao">*</font></td>
+                        <td><input type="text" name="ZipCodeBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:<font class="dausao">*</font></td>
+                        <td><input type="text" name="PhoneNumberBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                    <tr>
+                        <td>Extension:</td>
+                        <td><input type="text" name="ExtensionBill" oninput="billtoDelivery()"></td>
+                    </tr>
+                </table>
+                <p><b>Pleas note:</b></p>
+            </td>
+            <td valign="top">
+                <h3>Delivery Address</h3>
+                <input type="checkbox" name="usebilladdress" onclick="billtoDelivery()">Use Bill Address<br><br>
+                <table width="100%">
+                    <td>First Name:<font class="dausao">*</font></td>
+                    <td><input type="text" name="FirstNameDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:<font class="dausao">*</font></td>
+                    <td><input type="text" name="LastNameDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Company Name:</td>
+                    <td><input type="text" name="CompanyNameDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Address Line 1:<font class="dausao">*</font></td>
+                    <td><input type="text" name="AddressLine1Delivery"></td>
+                </tr>
+                <tr>
+                    <td>Address Line 2:</td>
+                    <td><input type="text" name="AddressLine2Delivery"></td>
+                </tr>
+                <tr>
+                    <td>City:<font class="dausao">*</font></td>
+                    <td><input type="text" name="CityDelivery"></td>
+                </tr>
+                <tr>
+                    <td>State:<font class="dausao">*</font></td>
+                    <td><input type="text" name="StateDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Zip Code:<font class="dausao">*</font></td>
+                    <td><input type="text" name="ZipCodeDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:<font class="dausao">*</font></td>
+                    <td><input type="text" name="PhoneNumberDelivery"></td>
+                </tr>
+                <tr>
+                    <td>Extension:</td>
+                    <td><input type="text" name="ExtensionDelivery"></td>
+                </tr>
+                </table>
+                <p><b>Pleas note:</b></p>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Email Address</h3>
+    <p>We require an email address, so that we can communicate with you about your order.</p>
+    <table>
+        <tr>
+            <td><font class="dausao">!Email address:</font></td>
+            <td><input type="email" name="Email"></td>
+        </tr>
+        <tr>
+            <td>Retype email address:<font class="dausao">*</font></td>
+            <td><input type="email" name="RetypeEmail"></td>
+        </tr>
+    </table>
+    <input type="checkbox" name="yestohidden" onclick="yes()"><b>Yes</b>, i would like to receive email about special, money-saving from Stapies <br> Dont worry the email are really good and can cael any time.
+    
+    <div id="receiveemail" hidden>
+    <h3>Save time next time-register now</h3>
+    Creat a stapies.com username and we will save your information to make future order easier. Fill out all the fields below.
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text"></td>
+            <td><a href="">Already have username</a></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text"></td>
+            <td>Case sensitive</td>
+        </tr>
+        <tr>
+            <td>Retype Password:</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Password reminder:</td>
+            <td>
+                <select>
+                    <option value="">Your ideal vacation spot?</option>
+                </select>
+            </td>
+            <td>If you forget</td>
+        </tr>
+        <tr>
+            <td>Answer your question:</td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+    <h3>Optinal Infomation</h3>
+    <table>
+        <tr>
+            <td>Stapies number:</td>
+            <td><input type="text"></td>
+            <td>Enter the Stapies</td>
+        </tr>
+        <tr>
+            <td>This Adress is an:</td>
+            <td><select>
+                <option value="">Pleas select...</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Type of Company:</td>
+            <td><select>
+                <option value="">Pleas select...</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Number of employee</td>
+            <td><select>
+                <option value="">Pleas select...</option>
+            </select></td>
+        </tr>
+    </table>
+    </div>
+    <br><input type="submit" value="Submit" onclick="">
+</form>
+</body>
+</html>
